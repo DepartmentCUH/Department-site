@@ -27,9 +27,9 @@ const CarouselComponent = () => {
                 <div style={{backgroundColor:"#636E72"}} className="text-center text-white p-2 text-lg mt-1 rounded">
                     About us
                 </div>
-                <div style={{backgroundColor:"#C4C4C4",height:"267px"}} className="text-center rounded mt-2" >
-                    hi
-
+                <div style={{backgroundColor:"#C4C4C4",height:"315px"}} className="text-justify	 rounded mt-2 pt-12 px-4" >
+                <span className="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </span>
                 </div>
 
             </div>

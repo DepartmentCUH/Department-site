@@ -29,7 +29,8 @@ const Navbar1 = () => {
             <Navbar collapseOnSelect expand="lg"  variant="dark" style={{backgroundColor:"#636E72"}}>
   <Container >
     {/* <div className="flex"> */}
-  <Navbar.Brand href="#home" className="flex lg:hidden"><img src="https://lh3.googleusercontent.com/proxy/5IT37qEeDqfVtiSc7yYdexT7HA_pxucd4RAuqL01Ng9ChBXQSDA3Mepaee6Rqs_kvFOwSXfoPVh-C0WSTw6mkwY" className="h-24 w-24"/></Navbar.Brand>
+  <Navbar.Brand href="#home" className="lg:hidden"><img src={logo2} style={{width:"50%"}}/></Navbar.Brand>
+  
   {/* </div> */}
   {/* <div className="lg:flex-col text-white font-bold	">
   <div className="text-center hidden lg:flex lg:justify-center">Department of Computer Science and Engineering</div>
