@@ -1,13 +1,32 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import logo from '../../assets/logo.png';
 import logo1 from '../../assets/logo1.png';
 import logo2 from '../../assets/logo2.png';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { useHistory } from "react-router-dom";
 import Nav from 'react-bootstrap/Nav';
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 const Navbar1 = () => {
+  let Authenticated = localStorage.getItem("jwt");
+  const [loginState,setLoginState] =useState(Authenticated);
+  const history = useHistory();
+  const doLogout = (e) => {
+    e.preventDefault();
+    localStorage.removeItem("jwt");
+    setLoginState(false);
+  }
+  // useEffect(() => {
+   
+   
+  // }, [loginState]);
+
     return (
        <div style={{backgroundColor:"#636E72"}}>
             <div className="hidden lg:flex" >
@@ -47,7 +66,12 @@ const Navbar1 = () => {
       <NavDropdown className="mx-8" title={
         <span className="text-white ">People</span>
     }  id="collasible-nav-dropdown">
-        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+        <NavDropdown.Item>
+        <Link to="/students" style={{textDecoration: 'none'}} className="hover:text-white focus:text-white cursor-pointer	  ">
+        Faculty
+            </Link>
+          
+          </NavDropdown.Item>
         <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
         <NavDropdown.Divider />
@@ -81,7 +105,15 @@ const Navbar1 = () => {
         <NavDropdown.Divider />
         <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
       </NavDropdown>
-      <Nav.Link href="#features" className="text-white mx-8 ">Login</Nav.Link>
+      <Nav.Link  className="text-white mx-8 ">
+        {loginState? <p className="hover:text-white focus:text-white cursor-pointer" onClick={doLogout}>
+      Logout
+            </p>  :
+      <Link to="/login" style={{textDecoration: 'none'}} className="hover:text-white focus:text-white cursor-pointer	  ">
+      Login
+            </Link>
+}
+            </Nav.Link>
      
     </Nav>
     {/* <Nav>
